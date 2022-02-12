@@ -46,12 +46,19 @@ function subTotal() {
     for (const totalPrice of totalPrices) {
         allTotalPrice += parseInt(totalPrice.innerText);
     }
-    subTotal.innerText = allTotalPrice;
+    // display subtotal
+    const subTotalPrice = allTotalPrice
+    subTotal.innerText = subTotalPrice;
 
-
-
+    // get tax
     const totalTax = document.getElementById('tax');
-    totalTax.innerText = allTotalPrice * .2;
 
+    // disply tax
+    const totalTaxPrice = allTotalPrice * .2;
+    totalTax.innerText = totalTaxPrice;
+    // get grandTotal
+    const grandTotal = document.getElementById('grand-total');
+    const grandTotalPrice = totalTaxPrice + subTotalPrice;
+    grandTotal.innerText = grandTotalPrice;
 
 }
