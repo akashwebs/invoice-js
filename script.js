@@ -38,7 +38,7 @@ document.getElementById('add-details-btn').addEventListener('click', function() 
 function element(tagName) {
     return document.createElement(tagName);
 }
-
+// for sub total 
 function subTotal() {
     let allTotalPrice = 0;
     const subTotal = document.getElementById('sub-total');
@@ -48,12 +48,10 @@ function subTotal() {
     }
     subTotal.innerText = allTotalPrice;
 
+
+
+    const totalTax = document.getElementById('tax');
+    totalTax.innerText = allTotalPrice * .2;
+
+
 }
-/* 
-<tr>
-     <th >1</th>
-     <td>Mark</td>
-     <td>Otto</td>
-     <td>@mdo</td>
- </tr> 
-*/
