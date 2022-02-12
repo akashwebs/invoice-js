@@ -4,12 +4,14 @@ document.getElementById('detail-submit-btn').addEventListener('click', function(
     const inputFieldBuyer = document.getElementById('buyer-details-input');
     // display buyer info 
     document.getElementById('buyer-info').innerText = inputFieldBuyer.value;
-    // get item name
+    inputFieldBuyer.value = ''
+        // get item name
 
 });
 
 document.getElementById('add-details-btn').addEventListener('click', function() {
     const itemName = document.getElementById('item-name-input');
+
     const priceItems = document.getElementById('item-price-input');
     const quantiyItems = document.getElementById('item-quantity-input');
 
@@ -33,6 +35,10 @@ document.getElementById('add-details-btn').addEventListener('click', function() 
     td3.classList.add('totalPRC')
     document.getElementById('info-table').appendChild(tr);
     subTotal();
+    itemName.value = '';
+    priceItems.value = '';
+    quantiyItems.value = '';
+
 });
 
 function element(tagName) {
@@ -55,10 +61,12 @@ function subTotal() {
 
     // disply tax
     const totalTaxPrice = allTotalPrice * .2;
-    totalTax.innerText = totalTaxPrice;
+    totalTax.innerText = totalTaxPrice.toFixed(2);
     // get grandTotal
     const grandTotal = document.getElementById('grand-total');
     const grandTotalPrice = totalTaxPrice + subTotalPrice;
     grandTotal.innerText = grandTotalPrice;
+
+    document.getElementById('grand-total-2').innerText = grandTotalPrice;
 
 }
