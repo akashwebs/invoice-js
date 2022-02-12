@@ -1,3 +1,10 @@
+// date show 
+const date = new Date();
+document.getElementById('show-date').innerText = date.toLocaleDateString();
+
+
+
+
 document.getElementById('detail-submit-btn').addEventListener('click', function() {
 
     // get main buyer input
