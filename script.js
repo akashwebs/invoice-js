@@ -30,8 +30,9 @@ document.getElementById('add-details-btn').addEventListener('click', function() 
     td1.innerText = priceItems.value;
     td2.innerText = quantiyItems.value;
     td3.innerText = totaPrice;
-
+    td3.classList.add('totalPRC')
     document.getElementById('info-table').appendChild(tr);
+    subTotal();
 });
 
 function element(tagName) {
@@ -39,6 +40,13 @@ function element(tagName) {
 }
 
 function subTotal() {
+    let allTotalPrice = 0;
+    const subTotal = document.getElementById('sub-total');
+    const totalPrices = document.getElementsByClassName('totalPRC');
+    for (const totalPrice of totalPrices) {
+        allTotalPrice += parseInt(totalPrice.innerText);
+    }
+    subTotal.innerText = allTotalPrice;
 
 }
 /* 
